@@ -23,7 +23,6 @@ double Kruh::obvod() const {
 
 void Kruh::vypisNaObrazovku() const {
     std::cout << "Kruh: r = " << r << ", X = (" << x << "," << y << ")\n";
-    std::cout << "S = " << S << ", O = " << O << "\n";
 }
 
 void Kruh::zmenPolomer(double r_novy) {

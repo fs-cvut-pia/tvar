@@ -7,7 +7,7 @@ class Kruh : public Tvar {
 public:
     Kruh();
     Kruh(double r_in, double x_in, double y_in);
-    void vypisNaObrazovku() const;
+    virtual void vypisNaObrazovku() const;
     double obsah() const;
     double obvod() const;
     void zmenPolomer(double r_novy);

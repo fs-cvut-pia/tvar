@@ -3,8 +3,10 @@
 
 class Tvar {
 public:
+    virtual double obsah() const = 0;
     void zmenStred(double x_novy, double y_novy);
     virtual bool leziUvnitr(double xx, double yy) const = 0; 
+    virtual void vypisNaObrazovku() const = 0;
 protected:
     Tvar();
     Tvar(double x_in, double y_in);

@@ -5,21 +5,25 @@
 #include <stdexcept>
 
 #include "Kruh.h"
+#include "Ctverec.h"
+#include "Srdce.h"
 
 int main() {
 
-    Kruh k(2.0,1.0,1.5);
+    std::vector<Tvar*> tvary = {
+        new Kruh(2.0,1.0,1.5),
+        new Kruh(1.0,0.0,0.0),
+        new Ctverec(3.0,2.0,2.0),
+        new Srdce(0.0,0.0)
+    };
 
-    k.vypisNaObrazovku();
+    for (auto tvar : tvary) {
+        tvar->vypisNaObrazovku();
+        std::cout << "Obsah je " << tvar->obsah() << "\n";
+        std::cout << "============================\n";
+    }
 
-    std::cout << "Obsah je " << k.obsah() << "\n";
-
-    k.zmenPolomer(3.0);
-    k.zmenStred(2.0,4.0);
-
-    k.vypisNaObrazovku();
-
-    if (k.leziUvnitr(1.0,3.0)) std::cout << "Bod lezi v kruhu\n";
+    for (auto tvar : tvary) delete tvar;
 
     return 0;
 }
